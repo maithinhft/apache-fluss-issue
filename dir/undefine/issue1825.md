@@ -1,0 +1,1 @@
+Follower có thể ngừng sync từ leader do lỗi mạng chưa rõ, phải restart pod
