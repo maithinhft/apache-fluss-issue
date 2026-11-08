@@ -1,6 +1,6 @@
 # Nhóm A: các issue ảnh hưởng trực tiếp tới CDP (chi tiết)
 
-* **Cập nhật:** 2026-11-08. Gồm **71 issue nhóm A** (ảnh hưởng trực tiếp tới CDP): 9 Rất cao, 19 Cao, 19 Trung bình, 24 Thấp theo đánh giá ban đầu.
+* **Cập nhật:** 2026-11-08. Gồm **66 issue nhóm A** (ảnh hưởng trực tiếp tới CDP). Không gồm 5 issue chưa đủ thông tin để đánh giá: #1825, #2451, #2892, #2943, #3553.
 * **Nguồn:** nội dung và bình luận của từng issue trên GitHub, PR liên quan; và mã nguồn tag `v1.0.0`.
 * **Trạng thái** trong file này là trạng thái đã đối chiếu lại. Nhiều chỗ **khác** với bản tổng hợp ban đầu. Ví dụ: #2076 ❌ (không phải ⏭️), #3223 và #898 ✅, #1619 ✅, #4755 và #4295 ⏭️, #2086 🟡.
 
@@ -44,16 +44,11 @@ Mỗi mục chi tiết gồm: **Vấn đề**, **Điều kiện kích hoạt** (
 | **🟠 Cao** | | | |
 | [#4256](https://github.com/apache/fluss/issues/4256) | Client dùng kết nối tới endpoint cũ khi rolling upgrade | 0.8.0 | ⏭️ Còn lỗi, đã fix trên `main` |
 | [#742](https://github.com/apache/fluss/issues/742) | Flink sink ghi bảng PK có thể treo khi upgrade cluster | `main` tại thời điểm báo | 🟡 Kịch bản chính đã được xử lý, issue chưa đóng |
-| [#2892](https://github.com/apache/fluss/issues/2892) | Sender của writer lỗi `Accounted size went negative` từ bộ nhớ Arrow | 0.9.0 | ❔ Chưa xác định |
-| [#2943](https://github.com/apache/fluss/issues/2943) | TabletServer không khởi động được vì `NoSuchElementException` khi recover segment không có batch | 0.9.0 | ❌ Còn lỗi trong mã |
 | [#4043](https://github.com/apache/fluss/issues/4043) | Một bucket lỗi chiếm hết permit, chặn lookup tới các bucket khác | 0.9.0 | ❌ Còn lỗi |
-| [#1825](https://github.com/apache/fluss/issues/1825) | Follower có thể ngừng sync từ leader do lỗi mạng chưa rõ | `main` thời khoảng 0.8 | ❔ Chưa xác định |
-| [#2451](https://github.com/apache/fluss/issues/2451) | TabletServer restart xong vẫn kẹt ở trạng thái khởi tạo ("Invalid timeout for ReplicaFetcherThread") | 0.8.0 | ❔ Chưa xác định |
 | [#1619](https://github.com/apache/fluss/issues/1619) | Coordinator restart có thể không tự tạo được partition mới | `main` thời khoảng 0.8 | ✅ cho race trong issue (đã xác minh trong mã) |
 | [#4726](https://github.com/apache/fluss/issues/4726) | Batch ghi vào auto-partition vừa hết hạn bị thử lại vô hạn | 1.0.0 | ❌ Còn lỗi |
 | [#4310](https://github.com/apache/fluss/issues/4310) | Flink sink bảng PK không phục hồi được từ checkpoint sau khi đổi số bucket của partition | `main` (mã có trong 1.0.0) | ❌ Còn lỗi |
 | [#2086](https://github.com/apache/fluss/issues/2086) | `FlussConnection.getTable` thất bại khi TabletServer được chọn đang không sẵn sàng | 0.8.0 | 🟡 Đã giảm nhẹ |
-| [#3553](https://github.com/apache/fluss/issues/3553) | Jar Fluss chứa jackson-core không relocate, gây `NoSuchMethodError` | `main`, người báo gặp từ 0.9.0 | ❌ Còn lỗi ở `fluss-fs-*`/`fluss-lake-lance` |
 | [#1163](https://github.com/apache/fluss/issues/1163) | Writer ném `OutOfOrderSequenceException` khi nâng cấp cluster | 0.6.0 | 🟡 Đã có nhiều fix liên quan |
 | [#692](https://github.com/apache/fluss/issues/692) | `commitRemoteLogManifest` có thể treo vĩnh viễn khi Coordinator failover | 0.6.0 | ❔ Chưa xác định |
 | [#665](https://github.com/apache/fluss/issues/665) | `IndexOutOfBoundsException` khi put KV với lượng dữ liệu lớn | 0.6.0 | ❌ Còn lỗi |
@@ -108,7 +103,7 @@ Mỗi mục chi tiết gồm: **Vấn đề**, **Điều kiện kích hoạt** (
 | [#3011](https://github.com/apache/fluss/issues/3011) | Replica bị đánh dấu offline mãi, bucket mất leader vĩnh viễn | 0.9.0 | 🟡 (kịch bản chính ✅) |
 | [#3466](https://github.com/apache/fluss/issues/3466) | Partition hết hạn gây bão `GET_METADATA` vào ZooKeeper | 0.9.0 | 🟡 Đã giảm một phần |
 
-**Các issue có điều kiện kích hoạt mơ hồ (19), nên test thực tế trước khi kết luận:** #4290, #3224, #4928, #2892, #2943, #1825, #2451, #4726, #3553, #1163, #692, #4000, #4741, #594, #596, #4511, #513, #1037, #3084.
+**Các issue có điều kiện kích hoạt mơ hồ (14), nên test thực tế trước khi kết luận:** #4290, #3224, #4928, #4726, #1163, #692, #4000, #4741, #594, #596, #4511, #513, #1037, #3084.
 
 ---
 
@@ -398,43 +393,6 @@ Writer **kẹt**, ghi lỗi liên tục, không báo lỗi lúc khởi động. 
 
 **Giảm thiểu:** `bootstrap.servers` trỏ vào tên DNS ổn định (headless service) thay vì IP. Rolling upgrade từng node. Như #4256.
 
-#### [#2892](https://github.com/apache/fluss/issues/2892): Sender của writer lỗi `Accounted size went negative` từ bộ nhớ Arrow
-
-> **Đánh giá: chưa xác định** (chưa đủ thông tin để kết luận).
-
-**Vấn đề:**
-- Trong lúc Sender thread đóng một batch Arrow để gửi, việc trả bộ nhớ Arrow ném `IllegalArgumentException: Accounted size went negative`. Lỗi ở phía **client**, bước đóng gói batch trước khi gửi.
-- Writer chết thì Flink job failover.
-- "Arrow double-release" trong bản tổng hợp ban đầu là giả thuyết của mình, issue không nói vậy.
-
-**Điều kiện kích hoạt:** xuất hiện **một lần** trong log khi đang **rolling upgrade server** trên 0.9.0. Người báo viết *"the exact correlation is unclear"*.
-
-> ⚠️ **Note: điều kiện mơ hồ.** Không có bước tái hiện, không rõ tần suất, không rõ liên quan tới đóng client, hủy batch hay retry khi server restart. Giả thuyết (từ mã 1.0.0, chưa kiểm chứng): trong rolling upgrade, batch bị hủy, retry hoặc client đang đóng, và các đường hủy/tái chế này giẫm lên đường serialize của Sender. Có thể liên quan #321 (force close khi còn batch).
-
-**Phiên bản gặp lỗi:** 0.9.0.
-
-**Trạng thái trong 1.0.0: ❔ Chưa xác định.** `ArrowWriter.serializeToOutputView` vẫn cùng cấu trúc. Không có PR. Có khả năng đã được sửa bởi #3102 (chưa kiểm chứng).
-
-**Giảm thiểu:** upgrade server ngoài giờ cao điểm, theo dõi job Flink và log client trong lúc upgrade.
-
-#### [#2943](https://github.com/apache/fluss/issues/2943): TabletServer không khởi động được vì `NoSuchElementException` khi recover segment không có batch
-
-> **Đánh giá: chưa xác định** (chưa đủ thông tin để kết luận).
-
-**Vấn đề:**
-- Khi recover log lúc khởi động, `LogSegment.readNextOffset()` lấy batch cuối bằng `Iterables.getLast(batches)` mà không kiểm tra rỗng.
-- `batches` rỗng thì ném `NoSuchElementException`, được bọc thành `FlussRuntimeException: Failed to recovery log`, **TabletServer không khởi động được**.
-
-**Điều kiện kích hoạt:** `readNextOffset()` được gọi cho segment mà phép đọc trả dữ liệu **khác `null` nhưng không có batch nào**.
-
-> ⚠️ **Note: điều kiện mơ hồ.** Chưa xác định trạng thái đĩa cụ thể tạo ra điều kiện đó. Không phải segment rỗng nào cũng gây lỗi (nếu vậy mọi bucket nhàn rỗi có active segment rỗng đều làm server lỗi khi restart). Khả năng (suy luận): crash/mất điện giữa lúc tạo hoặc ghi segment; hoặc `LogSegment.recover()` cắt hết phần hỏng về 0 byte. Chưa dò nhánh `translateOffset`.
-
-**Phiên bản gặp lỗi:** 0.9.0.
-
-**Trạng thái trong 1.0.0: ❌ Còn lỗi trong mã** (cả `main`), nhưng điều kiện kích hoạt chưa rõ. Không có PR.
-
-**Giảm thiểu:** runbook: đọc log khởi động để tìm segment lỗi, sao lưu rồi xóa segment đó (replica sẽ sao chép lại từ leader). Replication factor ≥ 3. Diễn tập restart cứng node.
-
 #### [#4043](https://github.com/apache/fluss/issues/4043): Một bucket lỗi chiếm hết permit, chặn lookup tới các bucket khác
 
 **Vấn đề:**
@@ -458,41 +416,6 @@ Writer **kẹt**, ghi lỗi liên tục, không báo lỗi lúc khởi động. 
 - `main` có hai thay đổi giảm nhẹ (không có trong 1.0.0): #4970 (retry lookup với exponential backoff, `client.lookup.retry-backoff` 100ms, `client.lookup.retry-backoff-max` 1s) và #4991 (hoãn lookup theo bucket khi bucket không có leader). Cả hai **không** thêm giới hạn in-flight theo bucket.
 
 **Giảm thiểu:** timeout và circuit breaker ở tầng AI agent. Tách client lookup cho các luồng quan trọng. Tăng `client.lookup.max-inflight-requests` có cân nhắc.
-
-#### [#1825](https://github.com/apache/fluss/issues/1825): Follower có thể ngừng sync từ leader do lỗi mạng chưa rõ
-
-> **Đánh giá: chưa xác định.** Chưa phân tích chi tiết issue này.
-
-**Vấn đề:** follower ngừng sao chép từ leader sau một lỗi mạng chưa rõ nguyên nhân, phải restart pod mới hồi phục. ISR co lại, mất khả năng chịu lỗi.
-
-**Điều kiện kích hoạt:** lỗi mạng giữa follower và leader (theo tiêu đề issue).
-
-> ⚠️ **Note: điều kiện mơ hồ.** Chưa phân tích issue và chưa đọc mã cho issue này. Không rõ loại lỗi mạng nào, follower kẹt ở đâu (luồng fetcher, kết nối, trạng thái bucket), và có liên quan tới #2451, #4256 (kết nối cũ) hay #692 (RPC không timeout) hay không.
-
-**Phiên bản gặp lỗi:** `main` thời khoảng 0.8.
-
-**Trạng thái trong 1.0.0: ❔ Chưa xác định.** Không có PR/fix.
-
-**Giảm thiểu:** alert replica lag và kích thước ISR. Runbook restart pod follower khi lag tăng mãi.
-
-#### [#2451](https://github.com/apache/fluss/issues/2451): TabletServer restart xong vẫn kẹt ở trạng thái khởi tạo ("Invalid timeout for ReplicaFetcherThread")
-
-> **Đánh giá: chưa xác định** (chưa đủ thông tin để kết luận).
-
-**Vấn đề:**
-- Người báo restart một TabletServer, thấy nó "vẫn ở trạng thái khởi tạo", jstack có `ReplicaFetcherThread-0-1` đứng ở `CompletableFuture.get` (có timeout) trong `processFetchLogRequest`. Họ cho rằng timeout 30 giây vô tác dụng.
-- Maintainer: fetcher chạy luồng riêng nên khó chặn khởi tạo; server thường kẹt lâu ở `loadLogs` sau khi tắt không sạch.
-- Đối chiếu mã 0.8.0 và 1.0.0: maintainer đúng về cấu trúc (fetcher **không thể** chặn khởi tạo), nhưng giả thuyết `loadLogs` không khớp jstack (fetcher đã sống khoảng 61 phút, tức `loadLogs` đã xong). Người báo chưa chứng minh được timeout vô tác dụng. **Chưa ai tìm ra nguyên nhân.**
-
-**Điều kiện kích hoạt:** sau khi restart một TabletServer vốn là leader của bảng (theo issue).
-
-> ⚠️ **Note: điều kiện mơ hồ.** Không rõ "trạng thái khởi tạo" người báo thấy là gì (log, UI hay trạng thái bucket). Không có log, chỉ một ảnh jstack. Người báo không trả lời yêu cầu thread dump bổ sung. Hướng nghi ngờ chưa kiểm tra: các bucket sau `becomeLeaderOrFollower` phải khôi phục KV và đồng bộ với leader mới mới vào ISR.
-
-**Phiên bản gặp lỗi:** 0.8.0.
-
-**Trạng thái trong 1.0.0: ❔ Chưa xác định.** Không có PR, không có kết luận. Mô tả "fetcher treo, timeout không tác dụng" trong bản tổng hợp ban đầu là lời người báo, chưa được chứng minh.
-
-**Giảm thiểu:** khi gặp, lấy thread dump đầy đủ và log `becomeLeaderOrFollower`/`makeFollowers` của node vừa restart. Dùng controlled shutdown để giảm `loadLogs` chậm sau tắt không sạch.
 
 #### [#1619](https://github.com/apache/fluss/issues/1619): Coordinator restart có thể không tự tạo được partition mới
 
@@ -579,27 +502,6 @@ Writer **kẹt**, ghi lỗi liên tục, không báo lỗi lúc khởi động. 
 **Trạng thái trong 1.0.0: 🟡 Đã giảm nhẹ** bằng retry một lần. bản tổng hợp ban đầu ghi ⏭️ với "fix liên quan #4873" là sai: #4873 là issue khác (`Admin#getServerNodes()` giữ địa chỉ Coordinator cũ).
 
 **Giảm thiểu:** retry khởi tạo connection/table ở tầng ứng dụng. Rolling upgrade từng node.
-
-#### [#3553](https://github.com/apache/fluss/issues/3553): Jar Fluss chứa jackson-core không relocate, gây `NoSuchMethodError`
-
-> **Đánh giá: chưa xác định** (chưa đủ thông tin để kết luận).
-
-**Vấn đề:**
-- Người báo gặp `NoSuchMethodError` khi dùng jackson 2.18 cùng jar Fluss, cho rằng `fluss-client`/`fluss-flink-*` chứa jackson-core 2.15.x không relocate.
-- Kiểm tra trực tiếp jar 1.0.0 (và 0.9.1) trên Maven Central: `fluss-client` và `fluss-flink-*` **không** chứa lớp jackson chưa relocate. Cái lọt thật là jar plugin filesystem (`fluss-fs-s3`, `fluss-fs-oss`, `fluss-fs-hdfs`...) và `fluss-lake-lance` (xem #4116, #4072).
-
-**Điều kiện kích hoạt (cần đồng thời):**
-1. Một jar `fluss-fs-*` hoặc `fluss-lake-lance` nằm trên **classpath chung** với ứng dụng. Phía client, đây là cách mặc định khi cần đọc remote storage (filesystem nạp bằng `ServiceLoader` từ classpath, xem #4116).
-2. Jackson của ứng dụng **mới hơn 2.15.3** (issue: 2.18.2) và dùng API chỉ có ở bản mới (ví dụ `_updateToken` từ 2.16).
-3. Jar Fluss đứng trước jackson của ứng dụng trên classpath.
-
-> ⚠️ **Note: điều kiện mơ hồ.** Người báo nói tái hiện với `fluss-client`/`fluss-flink-*` trên 0.9.x và SNAPSHOT, nhưng jar đã phát hành sạch. Có thể thứ gây lỗi là `fluss-fs-s3` (họ có nhắc) hoặc bản tự build. Chưa xác nhận.
-
-**Phiên bản gặp lỗi:** `main`, người báo gặp từ 0.9.0.
-
-**Trạng thái trong 1.0.0: ❌ Còn lỗi ở `fluss-fs-*`/`fluss-lake-lance`.** `fluss-client`/`fluss-flink-*` sạch. PR [#3884](https://github.com/apache/fluss/pull/3884) đang mở.
-
-**Giảm thiểu:** kiểm tra `mvn dependency:tree` và nội dung fat jar. Nếu AI agent chỉ dùng `fluss-client` và không đọc remote storage thì rủi ro thấp.
 
 #### [#1163](https://github.com/apache/fluss/issues/1163): Writer ném `OutOfOrderSequenceException` khi nâng cấp cluster
 
