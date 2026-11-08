@@ -1,9 +1,5 @@
 # Nhóm A: các issue ảnh hưởng trực tiếp tới CDP (chi tiết)
 
-* **Cập nhật:** 2026-11-08. Gồm **66 issue nhóm A** (ảnh hưởng trực tiếp tới CDP). Không gồm 5 issue chưa đủ thông tin để đánh giá: #1825, #2451, #2892, #2943, #3553.
-* **Nguồn:** nội dung và bình luận của từng issue trên GitHub, PR liên quan; và mã nguồn tag `v1.0.0`.
-* **Trạng thái** trong file này là trạng thái đã đối chiếu lại. Nhiều chỗ **khác** với bản tổng hợp ban đầu. Ví dụ: #2076 ❌ (không phải ⏭️), #3223 và #898 ✅, #1619 ✅, #4755 và #4295 ⏭️, #2086 🟡.
-
 **Ký hiệu trạng thái trong 1.0.0:**
 
 | Ký hiệu | Ý nghĩa |
